@@ -1,0 +1,367 @@
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+		<title>登录</title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../js/index.js"></script>
+
+		<script type="text/javascript">
+			window.onresize = function() {
+				document.documentElement.style.fontSize = innerWidth / 16 + 'px';
+			}
+			document.documentElement.style.fontSize = innerWidth / 16 + 'px';
+		</script>
+		<style>
+			@charset "utf-8";
+			/* CSS Document */
+			
+			body,
+			ul,
+			h1,
+			h2,
+			h3,
+			p,
+			div {
+				padding: 0;
+				margin: 0;
+				font-family: "微软雅黑";
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			input {
+				outline: none;
+			}
+			/*头部*/
+			
+			.header {
+				width: 16rem;
+				height: 2.37rem;
+			}
+			
+			.bt {
+				width: 16rem;
+				height: 2.37rem;
+				background: #fff;
+				border-bottom: 1px solid #d6d6d6;
+			}
+			
+			.bt .bt-left {
+				float: left;
+			}
+			
+			.bt .bt-left a {
+				float: left;
+				margin: 0.75rem 0.4rem 0 0.9rem;
+			}
+			
+			.bt .bt-left h1 {
+				font-size: 0.8rem;
+				float: left;
+				margin-top: 0.7rem;
+			}
+			
+			.bt .bt-right {
+				float: right;
+			}
+			
+			.bt .bt-right a {
+				float: right;
+				margin: 0.75rem 0.9rem 0 0.3rem;
+				color: #333;
+				font-size: 0.8rem;
+			}
+			/*登录框*/
+			
+			.main {
+				width: 16rem;
+				height: 22.7rem;
+				background: #eee;
+				padding-top: 0.5rem;
+			}
+			
+			.dlk {
+				width: 14.5rem;
+				height: 5.25rem;
+				margin: 0 auto;
+				border: 0.065rem solid #b9b9b9;
+				border-radius: 0.2rem;
+				background: #fff;
+			}
+			
+			.dlk-top,
+			.dlk-bottom {
+				width: 14.5rem;
+				height: 2.5rem;
+			}
+			
+			.dlk-top {
+				border-bottom: 0.04rem solid #ccc;
+			}
+			
+			.dlk-top span,
+			.dlk-bottom span {
+				float: left;
+				width: 2.6rem;
+				height: 2.5rem;
+				line-height: 2.63rem;
+				padding-left: 0.5rem;
+				font-size: 0.75rem;
+			}
+			
+			.dlk-top p,
+			.dlk-bottom p {
+				float: left;
+				width: 11rem;
+				height: 2.63rem;
+			}
+			
+			.dlk-top input,
+			.dlk-bottom input {
+				float: left;
+				border: none;
+				height: 2.5rem;
+				width: 4rem;
+				font-size: 0.65rem;
+			}
+			
+			.dlk-top img,
+			.dlk-bottom img {
+				float: left;
+				margin-top: 1rem;
+			}
+			
+			ul {
+				width: 14.5rem;
+				margin: 0 auto;
+			}
+			
+			ul li button {
+				width: 14.5rem;
+				height: 1.6rem;
+				background: #ff5000;
+				font-size: 0.8rem;
+				color: #fff;
+				margin-top: 0.7rem;
+				border: none;
+			}
+			
+			ul li button a {
+				color: #fff;
+			}
+			
+			ul li:nth-child(2) {
+				margin-top: 1rem;
+				height: 0.8rem;
+			}
+			
+			ul li .left {
+				font-size: 0.6rem;
+				float: left;
+				color: #666
+			}
+			
+			ul li .align {
+				font-size: 0.6rem;
+				float: left;
+				color: #666;
+			}
+			
+			#checked1 {
+				float: left;
+				margin-left: 2rem
+			}
+			
+			ul li .right {
+				font-size: 0.6rem;
+				float: right;
+				color: #666
+			}
+			
+			ul li .zc {
+				display: block;
+				width: 4.3rem;
+				height: 1.58rem;
+				line-height: 1.5rem;
+				border: 0.05rem solid #ba6338;
+				border-radius: 0.2rem;
+				font-size: 0.7rem;
+				color: #ff7500;
+				text-align: center;
+				margin: 1.1rem auto;
+			}
+			
+			ul li:nth-child(2) span {
+				font-size: 0.6rem;
+				float: left;
+				margin-left: 1.6rem;
+			}
+			
+			#mg_chceked {
+				margin-top: 0.18rem;
+				padding: 0;
+			}
+			
+			#ma1 {
+				width: 5rem;
+				height: 2.57rem;
+				line-height: 2.57rem;
+				font-size: 0.5rem;
+			}
+			
+			#ma2 {
+				width: 5rem;
+				height: 2.57rem;
+				line-height: 2.57rem;
+				font-size: 0.5rem;
+			}
+			
+			#masking {
+				width: 16rem;
+				height: 25.5rem;
+				background: rgba(127, 117, 117, 0.2);
+				position: absolute;
+				display: none;
+			}
+			
+			#auto {
+				width: 9rem;
+				height: 2.5rem;
+				background: #fff;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -4rem;
+				margin-top: -4.5rem;
+				border-radius: 0.5rem;
+				display: none;
+				font-size: 0.5rem;
+				text-align: center;
+				line-height: 2.5rem;
+			}
+		</style>
+	</head>
+
+	<body style="margin: 0;padding: 0;">
+		<div id="masking">
+			<div id="auto"></div>
+		</div>
+		<div class="header">
+			<div class="bt">
+				<div class="bt-left">
+					<a href="Home Page.html"><img src="../img/mg_jiantou.png" style="width:0.533rem;height:0.933rem;" /></a>
+					<h1>窝窝头账户登录</h1>
+				</div>
+				<div class="bt-right">
+					<a href="#">帮助</a>
+				</div>
+			</div>
+		</div>
+		<div class="main">
+			<div class="dlk">
+				<div class="dlk-top">
+					<span>账户</span>
+					<p><input type="text" placeholder="请输入用户名" id="mg_btn2" />
+						<span id="ma1"></span><img src="../img/mg_jiantou-2.png" style="width:0.85rem;height:0.5rem;" />
+					</p>
+				</div>
+				<div class="dlk-bottom">
+					<span>密码</span>
+					<p><input type="password" placeholder="请输入密码" id="mg_btn3" />
+						<span id="ma2"></span><img src="../img/mg_yan.png" style="width:0.85rem;height:0.5rem;" />
+					</p>
+				</div>
+			</div>
+			<div>
+				<ul>
+					<li><button id="mg_denglu"><a >登录</a></button></li>
+					<li>
+						<a href="#" class="left">用支付宝账户登录</a><span><input type="checkbox" id="mg_chceked" />七天免登陆</span>
+						<a href="#" class="right">找回密码</a>
+					</li>
+					<li>
+						<a href="register.html" class="zc">免费注册</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script>
+		var user_name = sessionStorage.phone;
+		if(user_name) {
+			$('#mg_btn2').val(sessionStorage.phone);
+			$('#mg_btn3').val(sessionStorage.psd);
+		}
+
+		function getCookie(name) {
+			var arr = document.cookie.split('; ')
+			for(var i = 0; i < arr.length; i++) {
+				if(arr[i].split('=')[0] == name) {
+					return unescape(arr[i].split('=')[1]).toString();
+				}
+			}
+			return '';
+		}
+		if(getCookie('user_phone') && getCookie('psd')) {
+
+			window.location.href = 'home page.html'
+
+		} else {
+			$('#mg_denglu a').click(function() {
+				$.ajax({
+					type: "post",
+					url: "http://10.115.11.224/supermarket/data/login.php",
+					dataType: 'jsonp',
+					jsonp: 'callback',
+					jsonpCallback: 'success_JsonpCallback',
+					async: true,
+					data: {
+						"user_phone": $('#mg_btn2').val(),
+						"user_pass_word": $('#mg_btn3').val()
+					},
+					success: function(data) {
+						debugger
+						if(data.msg == 'success') {
+
+							localStorage.user_phone = data.info.user_phone
+							localStorage.psd = data.info.user_psd
+							localStorage.user_sex=data.info.user_sex
+							localStorage.user_addr=data.info.user_addr
+							localStorage.user_name=data.info.user_name
+							window.location.href = 'home page.html'
+							if(mg_chceked.checked == true) {
+
+								setCookie('user_phone', $('#mg_btn2').val(), 7);
+								setCookie('psd', $('#mg_btn3').val(), 7);
+
+								function setCookie(cookie_name, value, timeOut) {
+									var date = new Date();
+									date.setDate(date.getDate() + timeOut);
+									document.cookie = cookie_name + "=" + escape(value) + ';expires=' + date.toGMTString()
+								}
+							}
+						} else if(data.msg == 'error') {
+							masking.style.display = 'block',
+								auto.style.display = 'block',
+								auto.innerHTML = data.reason
+							setTimeout(function() {
+								masking.style.display = 'none',
+									auto.style.dispaly = 'none'
+							}, 2000)
+
+						}
+					}
+				});
+			})
+		}
+	</script>
+
+</html>
